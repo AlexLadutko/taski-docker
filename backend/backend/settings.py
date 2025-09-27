@@ -7,8 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j_89af+30&&4qm*8z9_(^zz8p4-ho8z_m6ylm0s$h!-p@on1_^'
 
 DEBUG = True
-
-ALLOWED_HOSTS = []
+#Кроме того, в список ALLOWED_HOSTS в файле settings.py необходимо добавить IP-адрес,
+# (если есть) доменное имя вашего сервера и адрес localhost.
+ALLOWED_HOSTS = ['localhost', '51.250.25.172','taskihostname.3utilities.com','127.0.0.1'] 
 
 
 # Application definition
@@ -121,6 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+#по команде manage.py collectstatic соберет статику в эту папку
+STATIC_ROOT = BASE_DIR / 'collected_static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
